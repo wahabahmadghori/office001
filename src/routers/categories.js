@@ -1,5 +1,6 @@
 const Category = require('../models/category')
 const { Router } = require('express')
+const Poetry = require('../models/poetry')
 
 const router = Router()
 router.get('/', async (req, res) => {
@@ -12,6 +13,28 @@ router.get('/', async (req, res) => {
         res.status(500).json({ success: false, error: error })
     }
 })
+router.get('/:id', async (req, res) => {
+    try {
+        const categories = await Category.findById(req.params.id)
+        if (!categories)
+            return res.status(500).send('No Data Found')
+        res.status(200).json({ success: true, data: categories })
+    } catch (error) {
+        res.status(500).json({ success: false, error: error })
+    }
+})
+
+router.get('/:id/poetries', async (req, res) => {
+    try {
+        const poetries = await Poetry.find({"categoryId": req.params.id})
+        if (!poetries)
+            return res.status(500).send('No Data Found')
+        res.status(200).json({ success: true, data: poetries })
+    } catch (error) {
+        res.status(500).json({ success: false, error: error })
+    }
+})
+
 router.get('/count', async(req, res) => {
     
     try {

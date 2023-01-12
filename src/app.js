@@ -4,7 +4,7 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose');
 
 const categoryRouter = require('./routers/categories');
-const { options } = require('./routers/categories');
+const poetryRouter = require('./routers/poetries');
 
 require('dotenv/config')
 
@@ -14,6 +14,7 @@ app.use(bodyParser.json())
 
 //routers
 app.use(`${process.env.API_BASE_URL}/categories`, categoryRouter)
+app.use(`${process.env.API_BASE_URL}/poetries`, poetryRouter)
 
 mongoose.set('strictQuery', false);
 
