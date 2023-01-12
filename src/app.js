@@ -16,8 +16,8 @@ app.use(bodyParser.json())
 app.use(`${process.env.API_BASE_URL}/categories`, categoryRouter)
 app.use(`${process.env.API_BASE_URL}/poetries`, poetryRouter)
 
-mongoose.set('strictQuery', false);
-
+//mongoose.set('strictQuery', false);
+/*
 app.listen(3000, ()=>{
     mongoose.connect(process.env.CONNECTION_STRING, {
         useNewUrlParser: true,
@@ -29,4 +29,6 @@ app.listen(3000, ()=>{
         console.log(e)
     });
     
-})
+})*/
+
+module.exports.handler = serverless(app)
