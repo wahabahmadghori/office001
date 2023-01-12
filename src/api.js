@@ -39,6 +39,6 @@ router.get('/', (req, res)=>{
     res.send('Hello from API')
 })
 
-app.use('/.netlify/functions/api', router)
+app.use(process.env.API_BASE_URL, router)
 
 module.exports.handler = serverless(app)
