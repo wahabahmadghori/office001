@@ -4,18 +4,19 @@ const app = express()
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose');
 
-const categoryRouter = require('./routers/categories');
-const poetryRouter = require('./routers/poetries');
+//const categoryRouter = require('./routers/categories');
+//const poetryRouter = require('./routers/poetries');
+
 
 require('dotenv/config')
 
 //middlewares
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
+//app.use(bodyParser.urlencoded({ extended: false }))
+//app.use(bodyParser.json())
 
 //routers
-app.use(`${process.env.API_BASE_URL}/categories`, categoryRouter)
-app.use(`${process.env.API_BASE_URL}/poetries`, poetryRouter)
+//app.use(`${process.env.API_BASE_URL}/categories`, categoryRouter)
+//app.use(`${process.env.API_BASE_URL}/poetries`, poetryRouter)
 
 //mongoose.set('strictQuery', false);
 /*
@@ -31,5 +32,13 @@ app.listen(3000, ()=>{
     });
     
 })*/
+
+const router = express.Router()
+
+router.get('/', (req, res)=>{
+    res.send('Hello from API')
+})
+
+app.use('/.netlify/functions/api', router)
 
 module.exports.handler = serverless(app)
