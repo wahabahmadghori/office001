@@ -1,6 +1,6 @@
 const express = require('express')
 const serverless = require('serverless-http')
-const app = express()
+
 //const bodyParser = require('body-parser')
 //const mongoose = require('mongoose');
 
@@ -36,7 +36,7 @@ app.listen(3000, ()=>{
 
 
 
-
+const app = express()
 const router = express.Router()
 
 router.get('/', (req, res) => {
