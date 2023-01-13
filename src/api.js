@@ -36,16 +36,7 @@ app.listen(3000, ()=>{
 const router = express.Router()
 
 router.get('/', (req, res)=>{
-    mongoose.connect(process.env.CONNECTION_STRING, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        dbName:'urdu_shayari'
-    }).then(()=>{
-        res.send("Database connected")
-    }).catch(e=>{
-        res.send(e)
-    });
-    
+    res.send("Database connected")
 })
 
 app.use(process.env.API_BASE_URL, router)
