@@ -2,7 +2,7 @@ const express  = require('express')
 const serverless = require('serverless-http')
 const app = express()
 //const bodyParser = require('body-parser')
-const mongoose = require('mongoose');
+//const mongoose = require('mongoose');
 
 //const categoryRouter = require('./routers/categories');
 //const poetryRouter = require('./routers/poetries');
