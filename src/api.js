@@ -2,7 +2,7 @@ const express = require('express')
 const serverless = require('serverless-http')
 const app = express()
 //const bodyParser = require('body-parser')
-const mongoose = require('mongoose');
+//const mongoose = require('mongoose');
 
 //const categoryRouter = require('./routers/categories');
 //const poetryRouter = require('./routers/poetries');
@@ -40,7 +40,7 @@ app.listen(3000, ()=>{
 const router = express.Router()
 
 router.get('/', (req, res) => {
-    mongoose.connect('mongodb+srv://urdu_admin:ghori321@cluster0.oute1vb.mongodb.net/?retryWrites=true&w=majority', {
+    /*mongoose.connect('mongodb+srv://urdu_admin:ghori321@cluster0.oute1vb.mongodb.net/?retryWrites=true&w=majority', {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         dbName: 'urdu_shayari'
@@ -48,7 +48,7 @@ router.get('/', (req, res) => {
         res.send("Database connected")
     }).catch(e => {
         res.send(e)
-    });
+    });*/
 
 })
 
