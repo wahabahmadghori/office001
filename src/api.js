@@ -34,17 +34,7 @@ app.listen(3000, ()=>{
 })*/
 
 const router = express.Router()
-/*
-mongoose.connect(process.env.CONNECTION_STRING, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    dbName:'urdu_shayari'
-}).then(()=>{
-    console.log('Database Connection Established and Server is running at http://localhost:3000/api/v1')
-}).catch(e=>{
-    console.log(e)
-});
-*/
+
 router.get('/', (req, res)=>{
     res.send("Database connected")
 })
