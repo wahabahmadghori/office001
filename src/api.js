@@ -34,7 +34,7 @@ app.listen(3000, ()=>{
 })*/
 
 const router = express.Router()
-
+/*
 mongoose.connect(process.env.CONNECTION_STRING, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -44,7 +44,7 @@ mongoose.connect(process.env.CONNECTION_STRING, {
 }).catch(e=>{
     console.log(e)
 });
-
+*/
 router.get('/', (req, res)=>{
     res.send("Database connected")
 })
