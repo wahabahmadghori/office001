@@ -1,4 +1,4 @@
-const express  = require('express')
+const express = require('express')
 const serverless = require('serverless-http')
 const app = express()
 //const bodyParser = require('body-parser')
@@ -39,17 +39,17 @@ app.listen(3000, ()=>{
 
 const router = express.Router()
 
-router.get('/', (req, res)=>{
+router.get('/', (req, res) => {
     mongoose.connect('mongodb+srv://urdu_admin:ghori321@cluster0.oute1vb.mongodb.net/?retryWrites=true&w=majority', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    dbName:'urdu_shayari'
-}).then(()=>{
-    res.send("Database connected")
-}).catch(e=>{
-    res.send(e)
-});
-    
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        dbName: 'urdu_shayari'
+    }).then(() => {
+        res.send("Database connected")
+    }).catch(e => {
+        res.send(e)
+    });
+
 })
 
 app.use(process.env.API_BASE_URL, router)
