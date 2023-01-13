@@ -35,20 +35,21 @@ app.listen(3000, ()=>{
 })*/
 
 
-mongoose.connect('mongodb+srv://urdu_admin:ghori321@cluster0.oute1vb.mongodb.net/?retryWrites=true&w=majority', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    dbName:'urdu_shayari'
-}).then(()=>{
-    console.log('Database Connection Established and Server is running at http://localhost:3000/api/v1')
-}).catch(e=>{
-    console.log(e)
-});
+
 
 const router = express.Router()
 
 router.get('/', (req, res)=>{
+    mongoose.connect('mongodb+srv://urdu_admin:ghori321@cluster0.oute1vb.mongodb.net/?retryWrites=true&w=majority', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    dbName:'urdu_shayari'
+}).then(()=>{
     res.send("Database connected")
+}).catch(e=>{
+    res.send(e)
+});
+    
 })
 
 app.use(process.env.API_BASE_URL, router)
