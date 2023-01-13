@@ -12,7 +12,7 @@ require('dotenv/config')
 
 //middlewares
 //app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
+//app.use(bodyParser.json())
 
 //routers
 //app.use(`${process.env.API_BASE_URL}/categories`, categoryRouter)
@@ -32,7 +32,7 @@ app.listen(3000, ()=>{
     });
     
 })*/
-
+/*
 mongoose.set('strictQuery', true)
 mongoose.connect(process.env.CONNECTION_STRING, {
     useNewUrlParser: true,
@@ -43,7 +43,7 @@ mongoose.connect(process.env.CONNECTION_STRING, {
 }).catch((e)=>{
   console.log(e)
 })
-
+*/
 
 const router = express.Router()
 
