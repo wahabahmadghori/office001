@@ -1,11 +1,12 @@
 const express  = require('express')
+const categoryRouter = require('./routers/categories');
+const poetryRouter = require('./routers/poetries');
 const serverless = require('serverless-http')
 const app = express()
 //const bodyParser = require('body-parser')
 //const mongoose = require('mongoose');
 
-const categoryRouter = require('./routers/categories');
-const poetryRouter = require('./routers/poetries');
+
 
 
 require('dotenv/config')
@@ -15,8 +16,8 @@ require('dotenv/config')
 //app.use(bodyParser.json())
 
 //routers
-app.use(`${process.env.API_BASE_URL}/categories`, categoryRouter)
-app.use(`${process.env.API_BASE_URL}/poetries`, poetryRouter)
+//app.use(`${process.env.API_BASE_URL}/categories`, categoryRouter)
+//app.use(`${process.env.API_BASE_URL}/poetries`, poetryRouter)
 
 //mongoose.set('strictQuery', false);
 /*
