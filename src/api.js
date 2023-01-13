@@ -10,11 +10,11 @@ const poetryRouter = require('./routers/poetries');
 
 require('dotenv/config')
 
-middlewares
+//middlewares
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-routers
+//routers
 app.use(`${process.env.API_BASE_URL}/categories`, categoryRouter)
 app.use(`${process.env.API_BASE_URL}/poetries`, poetryRouter)
 
