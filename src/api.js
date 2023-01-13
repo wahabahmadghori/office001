@@ -1,14 +1,14 @@
 const express = require('express')
 const serverless = require('serverless-http')
 
-//const bodyParser = require('body-parser')
-//const mongoose = require('mongoose');
-
+const bodyParser = require('body-parser')
+const mongoose = require('mongoose');
+require('dotenv/config')
 //const categoryRouter = require('./routers/categories');
 //const poetryRouter = require('./routers/poetries');
 
 
-require('dotenv/config')
+
 
 //middlewares
 //app.use(bodyParser.urlencoded({ extended: false }))
@@ -40,7 +40,7 @@ const app = express()
 const router = express.Router()
 
 router.get('/', (req, res) => {
-    /*mongoose.connect('mongodb+srv://urdu_admin:ghori321@cluster0.oute1vb.mongodb.net/?retryWrites=true&w=majority', {
+    mongoose.connect('mongodb+srv://urdu_admin:ghori321@cluster0.oute1vb.mongodb.net/?retryWrites=true&w=majority', {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         dbName: 'urdu_shayari'
@@ -48,7 +48,7 @@ router.get('/', (req, res) => {
         res.send("Database connected")
     }).catch(e => {
         res.send(e)
-    });*/
+    });
 
 })
 
