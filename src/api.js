@@ -1,6 +1,5 @@
 const express = require('express')
 const serverless = require('serverless-http')
-
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose');
 require('dotenv/config')
@@ -40,7 +39,7 @@ const app = express()
 const router = express.Router()
 
 router.get('/', (req, res) => {
-    mongoose.connect('mongodb+srv://urdu_admin:ghori321@cluster0.oute1vb.mongodb.net/?retryWrites=true&w=majority', {
+    /*mongoose.connect('mongodb+srv://urdu_admin:ghori321@cluster0.oute1vb.mongodb.net/?retryWrites=true&w=majority', {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         dbName: 'urdu_shayari'
@@ -49,7 +48,7 @@ router.get('/', (req, res) => {
     }).catch(e => {
         res.send(e)
     });
-
+*/
 })
 
 app.use(process.env.API_BASE_URL, router)
