@@ -1,11 +1,11 @@
 const express  = require('express')
 const serverless = require('serverless-http')
 const app = express()
-const bodyParser = require('body-parser')
-const mongoose = require('mongoose');
+//const bodyParser = require('body-parser')
+//const mongoose = require('mongoose');
 
-const categoryRouter = require('./routers/categories');
-const poetryRouter = require('./routers/poetries');
+//const categoryRouter = require('./routers/categories');
+//const poetryRouter = require('./routers/poetries');
 
 
 require('dotenv/config')
@@ -32,23 +32,20 @@ app.listen(3000, ()=>{
     });
     
 })*/
-/*
-mongoose.set('strictQuery', true)
-mongoose.connect(process.env.CONNECTION_STRING, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    dbName:'urdu_shayari'
-}).then(()=>{
-  console.log('Established Connection')
-}).catch((e)=>{
-  console.log(e)
-})
-*/
 
 const router = express.Router()
 
 router.get('/', (req, res)=>{
-    res.status(200).send('API Calling')
+    mongoose.connect(process.env.CONNECTION_STRING, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        dbName:'urdu_shayari'
+    }).then(()=>{
+        res.send("Database connected")
+    }).catch(e=>{
+        res.send(e)
+    });
+    
 })
 
 app.use(process.env.API_BASE_URL, router)
