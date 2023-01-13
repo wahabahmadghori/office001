@@ -1,7 +1,7 @@
 const express = require('express')
 const serverless = require('serverless-http')
-const bodyParser = require('body-parser')
-const mongoose = require('mongoose');
+//const bodyParser = require('body-parser')
+//const mongoose = require('mongoose');
 require('dotenv/config')
 //const categoryRouter = require('./routers/categories');
 //const poetryRouter = require('./routers/poetries');
